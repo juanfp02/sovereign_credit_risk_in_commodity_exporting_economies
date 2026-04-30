@@ -181,6 +181,7 @@ class LogNormalJumpCCAPricer:
             def eq2(s):
                 _, delta = self._series(V, B_f, r_f, T, s, lam)
                 return s * V * delta - LCL_usd * sigma_lcl
+            
             try:
                 sigma_diff_new = brentq(eq2, 1e-6, 5.0, xtol=1e-10)
             except ValueError:
